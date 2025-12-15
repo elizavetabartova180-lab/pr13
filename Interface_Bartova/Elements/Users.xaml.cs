@@ -13,19 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Interface_Bartova
+namespace Interface_Bartova.Elements
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Users : UserControl
     {
-        public static MainWindow mainWindow;
-        public MainWindow()
+        public Models.Users ThisUser;
+        public Users(Models.Users User)
         {
             InitializeComponent();
-            mainWindow = this;
+            ThisUser = User;
+            FIO.Text = User.FIO;
         }
-        public void SelectUser(Models.Users users) { }
+        private void SelectUser(object sender, MouseButtonEventArgs e)=>
+        
+            MainWindow.mainWindow.SelectUser(ThisUser);
+        
     }
 }
