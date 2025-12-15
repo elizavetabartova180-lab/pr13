@@ -34,7 +34,7 @@ namespace Interface_Bartova.Elements
         private void DeleteMessage(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             ThisMessage.Delete();
-            MainWindow.mainWindow.parentMessage.Children.Removal(this);
+            MainWindow.mainWindow.parentMessage.Children.Remove(this);
         }
 
     }
